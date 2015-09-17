@@ -12,11 +12,11 @@
 
 #include "get_next_line.h"
 
-t_list		*ft_lstinit(void)
+t_dlist		*ft_lstinit(void)
 {
-	t_list *result;
+	t_dlist *result;
 
-	result = (t_list *)malloc(sizeof(t_list));
+	result = (t_dlist *)malloc(sizeof(t_dlist));
 	if (result)
 	{
 		result->first = NULL;
@@ -27,7 +27,7 @@ t_list		*ft_lstinit(void)
 	return (result);
 }
 
-void		ft_lstaddbuff(t_list *list, char *buff)
+void		ft_lstaddbuff(t_dlist *list, char *buff)
 {
 	t_node	*tmp;
 
@@ -54,7 +54,7 @@ void		ft_lstaddbuff(t_list *list, char *buff)
 	ft_bzero(buff, BUFF_SIZE + 1);
 }
 
-void		ft_lstclear(t_list **list)
+void		ft_lstclear(t_dlist **list)
 {
 	t_node	*tmp;
 
@@ -78,7 +78,7 @@ void		ft_lstclear(t_list **list)
 	}
 }
 
-char		*ft_getline(t_list **list)
+char		*ft_getline(t_dlist **list)
 {
 	char		*result;
 	t_node		*tmp;
@@ -104,7 +104,7 @@ char		*ft_getline(t_list **list)
 int			get_next_line(int const fd, char **line)
 {
 	char			buff[BUFF_SIZE + 1];
-	t_list static	*list = NULL;
+	t_dlist static	*list = NULL;
 
 	if (!line || !*line || fd < 0)
 		return (-1);

@@ -25,13 +25,13 @@ typedef struct		s_node
 	struct s_node	*next;
 }					t_node;
 
-typedef struct		s_list
+typedef struct		s_dlist
 {
 	int				len;
 	long int		end;
 	struct s_node	*first;
 	struct s_node	*last;
-}					t_list;
+}					t_dlist;
 
 int					get_next_line(int const fd, char **line);
 
